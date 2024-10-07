@@ -36,7 +36,8 @@ import pandas as pd
 df=pd.read_csv("/content/Encoding Data.csv")
 df
 ```
-![Screenshot 2024-10-03 103513](https://github.com/user-attachments/assets/59689daa-e4dc-462e-84a5-b97e0be86450)
+![image](https://github.com/user-attachments/assets/25385a62-dc4d-4b28-8706-f33b65377dcb)
+
 
 
 ## ORDINAL ENCODER
@@ -46,13 +47,15 @@ pm=['Hot','Warm','Cold']
 e1=OrdinalEncoder(categories=[pm])
 e1.fit_transform(df[["ord_2"]])
 ```
-![Screenshot 2024-10-03 103550](https://github.com/user-attachments/assets/576a4ed7-686f-4c32-b582-ce82d75d4411)
+![image](https://github.com/user-attachments/assets/9a472bb4-2472-4f85-9d93-7d49162c2882)
+
 
 ```
 df['bo2']=e1.fit_transform(df[["ord_2"]])
 df
 ```
-![Screenshot 2024-10-03 103621](https://github.com/user-attachments/assets/e7e7a504-d9c6-4c80-96ca-2983f77999d7)
+![image](https://github.com/user-attachments/assets/d1a4471a-2a98-4df8-80c9-b0374cea0c88)
+
 
 
 ## LABEL ENCODER
@@ -62,7 +65,7 @@ dfc=df.copy()
 dfc['ord_2']=le.fit_transform(df[["ord_2"]])
 dfc
 ```
-![Screenshot 2024-10-03 103654](https://github.com/user-attachments/assets/914c6fad-448a-4563-bfc3-743a98a010a7)
+![image](https://github.com/user-attachments/assets/ac9daa50-54b5-41a0-9eaa-f7f62445d8a8)
 
 
 ```
@@ -70,7 +73,8 @@ dfc=df.copy()
 dfc['con_2']=le.fit_transform(dfc['ord_2'])
 dfc
 ```
-![Screenshot 2024-10-03 103732](https://github.com/user-attachments/assets/b6f137ee-65bd-4dac-b83b-c1556dc23ea0)
+![image](https://github.com/user-attachments/assets/1183c083-7455-44d9-ab5a-6364db6bb66e)
+
 
 
 ## ONEHOT ENCODER
@@ -82,7 +86,8 @@ df=df.copy()
 enc=pd.DataFrame(ohe.fit_transform(df[['nom_0']]))
 enc
 ```
-![Screenshot 2024-10-03 103807](https://github.com/user-attachments/assets/03224a1e-8843-4660-a0e8-f24f51f337a0)
+![image](https://github.com/user-attachments/assets/24c10026-6c4f-4ab4-8bd2-acc438cfcdb1)
+
 
 
 ```
@@ -90,14 +95,14 @@ df2=pd.concat([df,enc],axis=1)
 df2
 
 ```
+![image](https://github.com/user-attachments/assets/333353b0-c4d3-413d-80a2-6583b0a407d7)
 
-![Screenshot 2024-10-03 103843](https://github.com/user-attachments/assets/dbb0a9e0-8410-4a07-8c89-537782a5c89e)
 
 
 ```
 pip install --upgrade category_encoders
 ```
-![Screenshot 2024-10-03 103926](https://github.com/user-attachments/assets/e083239d-935e-41e0-8e44-92c16e7a327e)
+![image](https://github.com/user-attachments/assets/7dda6d75-6fcd-456d-9f89-f365b62cf6ba)
 
 
 ## BinaryEncoder
@@ -107,7 +112,8 @@ import pandas as pd
 df=pd.read_csv("/content/data (1).csv")
 df
 ```
-![Screenshot 2024-10-03 104030](https://github.com/user-attachments/assets/1dc4372d-46a5-4da8-9896-646a599e7364)
+![image](https://github.com/user-attachments/assets/798048a2-a388-4c9d-82cc-0b0b58c227b1)
+
 
 
 ```
@@ -117,7 +123,8 @@ dfb=pd.concat([df,nd],axis=1)
 dfb1=df.copy()
 dfb
 ```
-![Screenshot 2024-10-03 104108](https://github.com/user-attachments/assets/e351cdf9-3e76-4315-b041-776ff713fb1f)
+![image](https://github.com/user-attachments/assets/53658338-c752-428d-92fe-21d434551715)
+
 
 
 ## TARGET ENCODER
@@ -129,7 +136,8 @@ new=te.fit_transform(X=cc["City"],y=cc["Target"])
 cc=pd.concat([cc,new],axis=1)
 cc
 ```
-![Screenshot 2024-10-03 104251](https://github.com/user-attachments/assets/0bb9b1b7-cdd0-45b1-a0b4-a18c495d4639)
+![image](https://github.com/user-attachments/assets/d81844f8-201e-41af-b8f5-efb77cd00365)
+
 
 
 
@@ -141,13 +149,15 @@ import numpy as np
 df=pd.read_csv("/content/Data_to_Transform.csv")
 df
 ```
-![Screenshot 2024-10-03 104342](https://github.com/user-attachments/assets/8b5744e8-3fbd-4e01-8164-bbf4577121f2)
+![image](https://github.com/user-attachments/assets/937deb29-8cb4-4277-8436-e44cfe711af3)
+
 
 ```
 df.skew()
 
 ```
-![image](https://github.com/user-attachments/assets/9def3c3a-d4ed-46c5-83f1-399301b35006)
+![image](https://github.com/user-attachments/assets/f160a7c1-621e-4017-9eb3-cb6d65ea9414)
+
 
 ```
 
@@ -156,7 +166,8 @@ df
 
 ```
 
-![image](https://github.com/user-attachments/assets/f61043ac-3fb1-44b6-b682-1302c7ab4ce2)
+![image](https://github.com/user-attachments/assets/fb4e3477-40f1-4023-bb97-94cdfda1e9b2)
+
 
 ```
 
@@ -165,7 +176,8 @@ df
 
 ```
 
-![image](https://github.com/user-attachments/assets/c9c09563-c5c2-4eca-9681-04d08aaaf817)
+![image](https://github.com/user-attachments/assets/edc32358-aed9-46d8-9153-789b5a6cd1b1)
+
 
 ```
 
@@ -174,7 +186,8 @@ df
 
 ```
 
-![image](https://github.com/user-attachments/assets/08f6b9da-99b0-4bbe-a49d-cb6b4d12817f)
+![image](https://github.com/user-attachments/assets/a15cb26d-ab41-445d-aaa1-153ce9eabc06)
+
 
 ```
 
@@ -183,7 +196,8 @@ df
 
 ```
 
-![image](https://github.com/user-attachments/assets/799e50eb-f4a5-4d10-a4b6-46572e30b85e)
+![image](https://github.com/user-attachments/assets/f8dd148c-77d4-4c16-bbce-d1c95118debd)
+
 
 ## POWER TRANSFORMATION
 
@@ -193,8 +207,8 @@ df["Highly Positive Skew"],parameter=stats.boxcox(df["Highly Positive Skew"])
 df
 
 ```
+![image](https://github.com/user-attachments/assets/7cab4b9e-a95b-4d78-9e9d-62c9cc638568)
 
-![image](https://github.com/user-attachments/assets/b6b0f4f2-e2f5-47d8-a9c6-876ab4366c01)
 
 ```
 
@@ -203,8 +217,8 @@ df
 
 ```
 
+![image](https://github.com/user-attachments/assets/83c26ae6-dbee-453d-8312-e998b91e2c25)
 
-![image](https://github.com/user-attachments/assets/f3c51986-dc9b-4575-ba98-9456f82cacce)
 
 ```
 
@@ -216,7 +230,8 @@ plt.show()
 
 ```
 
-![image](https://github.com/user-attachments/assets/cc55a050-ffc7-4ed1-9761-d739adb3a207)
+![image](https://github.com/user-attachments/assets/9f76cb8c-9f19-4056-b11e-64ff77841d39)
+
 
 ```
 
@@ -225,7 +240,8 @@ plt.show()
 
 ```
 
-![image](https://github.com/user-attachments/assets/d44a5f2e-efce-4a3f-922b-8ab97e8791aa)
+![image](https://github.com/user-attachments/assets/c07f7245-6df9-436c-93f8-801b323c405a)
+
 
 ```
 
@@ -237,7 +253,8 @@ plt.show()
 
 ```
 
-![image](https://github.com/user-attachments/assets/d8b8ccba-ded9-4b22-9786-383cc9efed47)
+![image](https://github.com/user-attachments/assets/fc6e95d7-50d0-4bdd-b3c5-7bcb4fd52421)
+
 
 # RESULT:
     
